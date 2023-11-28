@@ -97,7 +97,7 @@ jobs:
         if_true: lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
         if_false: lunch omni_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka ${{ github.event.inputs.BUILD_TARGET }}image
       
-    - name: Building OrangeFox Project
+    - name: Building OrangeFox
       run: |
         cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         set +e
@@ -120,7 +120,7 @@ jobs:
             echo "Recovery out directory is empty."
         fi
         if [ -f out/target/product/${{ github.event.inputs.DEVICE_NAME }}/OrangeFox*.zip ]
-       if [ -f out/target/product/${{ github.event.inputs.DEVICE_NAME }}/boot*.zip ]; then
+        if [ -f out/target/product/${{ github.event.inputs.DEVICE_NAME }}/boot*.zip ]; then
             echo "CHECK_ZIP_IS_OK=true" >> $GITHUB_ENV
         else
             echo "Recovery out directory is empty."
