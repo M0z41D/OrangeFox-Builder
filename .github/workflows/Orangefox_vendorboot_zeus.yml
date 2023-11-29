@@ -35,7 +35,7 @@ on:
         default: 'zeus'
       BUILD_TARGET:
         description: 'Specify your Build Target'
-        required: true
+        required: false
         default: 'vendorboot'
 
 jobs:
