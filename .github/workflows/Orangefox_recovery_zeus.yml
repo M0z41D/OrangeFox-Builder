@@ -37,11 +37,6 @@ on:
         description: 'Specify your Build Target'
         required: true
         default: 'recovery'
-        type: choice
-        options:
-        - boot
-        - recovery
-        - vendorboot
 
 jobs:
   build:
@@ -127,8 +122,8 @@ jobs:
     - name: Upload Recovery
       uses: actions/upload-artifact@v3.0.0
       with:
-        path: /home/runner/work/OrangeFox-Builder/OrangeFox-Builder/OrangeFox/fox_12.1/out/target/product/zeus/boot.img
-        name: boot
+        path: /home/runner/work/OrangeFox-Builder/OrangeFox-Builder/OrangeFox/fox_12.1/out/target/product/zeus/OrangeFox*.img
+        name: Recovery
         
     - name: Upload to Release
       if: env.CHECK_IMG_IS_OK == 'true' && env.CHECK_ZIP_IS_OK == 'true'
