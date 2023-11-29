@@ -7,7 +7,7 @@ name: OrangeFox Vendorboot
 # And all Contributors in every repositories I used
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: 'MozaiD'
     inputs:
       MANIFEST_BRANCH:
         description: 'OrangeFox Branch'
